@@ -1,46 +1,23 @@
 package square
 
-import (
-"math"
-)
+import "math"
 
+type CustomType = int
 
-type myType int
+const Pi = 3.14159
+const SidesCircle = 0
+const SidesTriangle = 3
+const SidesSquare = 4
 
-func CalcSquare(sideLen float64, sidesNum myType) (res float64) {
-
-        const SidesTriangle myType = 3
-        const SidesSquare myType = 4
-        const SidesCircle myType = 0
-        if SidesTriangle == sidesNum {
-                res = (math.Pow(sideLen, 2.0) * math.Sqrt(3.0))/4
-        } else if SidesSquare == sidesNum {
-                res = math.Pow(sideLen, 2.0)
-        } else if SidesCircle == sidesNum {
-                res = math.Pi * math.Pow(sideLen, 2.0)
-        }
-        return
+func CalcSquare(sideLen float64, sidesNum CustomType) float64 {
+	switch sidesNum {
+	case SidesSquare:
+		return sideLen * sideLen
+	case SidesTriangle:
+		return (math.Sqrt(3) / 4) * sideLen * sideLen
+	case SidesCircle:
+		return Pi * sideLen * sideLen
+	default:
+		return 0
+	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
