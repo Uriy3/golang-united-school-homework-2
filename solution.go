@@ -1,4 +1,4 @@
-package solution
+
 
 import "math"
 
