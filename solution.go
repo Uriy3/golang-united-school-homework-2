@@ -1,4 +1,4 @@
-package main7
+package main
 
 import "math"
 
